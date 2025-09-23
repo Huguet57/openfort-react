@@ -1,9 +1,10 @@
 /**
- * TODO: Automate transports based on configured chains
+ * Helpers for constructing default Wagmi transports for supported chains.
  *
- * Developers using this causes loss of granular control over a dapps transports,
- * but for simple use cases, it's nice to have and saves a lot of boilerplate.
- *
+ * @remarks
+ * These utilities favour convenience over granular control. They are well suited
+ * for straightforward integrations where automatically configuring transports is
+ * preferable to repeating boilerplate in every application.
  */
 
 import { fallback, http, webSocket } from 'wagmi';
@@ -13,6 +14,11 @@ import { type HttpTransport, type WebSocketTransport } from 'viem';
 
 import { chainConfigs } from './constants/chainConfigs';
 
+/**
+ * Builds a transport based on the configured provider and chain.
+ *
+ * @internal
+ */
 const createTransport = ({
   chain,
   provider = 'public',
@@ -41,12 +47,24 @@ const createTransport = ({
   return http();
 };
 
+/**
+ * Options for {@link getDefaultTransports}.
+ */
 type GetDefaultTransportsProps = {
   chains?: CreateConfigParameters['chains'];
   alchemyId?: string;
   infuraId?: string;
 };
 
+/**
+ * Creates a map of Wagmi transports for the provided chains.
+ *
+ * @param props - Configuration for the generated transports.
+ * @param props.chains - Chains that require transports. Defaults to popular EVM chains.
+ * @param props.alchemyId - Alchemy API key used to prioritise Alchemy transports when available.
+ * @param props.infuraId - Infura API key used to prioritise Infura transports when available.
+ * @returns A record mapping chain identifiers to their fallback transport configuration.
+ */
 export const getDefaultTransports = ({
   chains = [mainnet, polygon, optimism, arbitrum],
   alchemyId,

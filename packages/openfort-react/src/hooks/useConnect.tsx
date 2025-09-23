@@ -1,6 +1,8 @@
 /**
- * This is a wrapper around wagmi's useConnect hook that adds some
- * additional functionality.
+ * Custom wrapper around {@link wagmiUseConnect} that adds Openfort specific logic.
+ *
+ * @param props - Optional configuration passed through to Wagmi's hook.
+ * @returns Connection helpers augmented with Openfort defaults and logging.
  */
 
 import {
