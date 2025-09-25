@@ -1,7 +1,6 @@
 /**
  * Helpers for constructing default Wagmi transports for supported chains.
  *
- * @remarks
  * These utilities favour convenience over granular control. They are well suited
  * for straightforward integrations where automatically configuring transports is
  * preferable to repeating boilerplate in every application.
@@ -58,6 +57,9 @@ type GetDefaultTransportsProps = {
 
 /**
  * Creates a map of Wagmi transports for the provided chains.
+ *
+ * Each chain receives a fallback transport that prioritises API-key-authenticated providers before
+ * falling back to the public transport.
  *
  * @param props - Configuration for the generated transports.
  * @param props.chains - Chains that require transports. Defaults to popular EVM chains.

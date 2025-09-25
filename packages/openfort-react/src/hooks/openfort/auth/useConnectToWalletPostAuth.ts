@@ -30,6 +30,9 @@ export type CreateWalletPostAuthOptions = {
 /**
  * React hook that attempts to recover or create an embedded wallet once a user has authenticated.
  *
+ * The hook inspects existing embedded wallets, recovers automatically managed wallets when
+ * available, and provisions a new wallet when recovery is not possible.
+ *
  * @returns Helpers that execute the post-authentication wallet connection flow.
  */
 export const useConnectToWalletPostAuth = () => {

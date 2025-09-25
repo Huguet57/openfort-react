@@ -38,9 +38,8 @@ type OpenfortProviderProps = {
 /**
  * Provides Openfort configuration and context to descendant components.
  *
- * @remarks
- * The provider must be rendered within a {@link WagmiContext} and should only be mounted once
- * to avoid conflicting global state. See {@link OpenfortProviderProps} for the supported options.
+ * The provider must be rendered within a {@link WagmiContext} and should only be mounted once to
+ * avoid conflicting global state. See {@link OpenfortProviderProps} for the supported options.
  *
  * @param props - Provider configuration including callbacks, UI options and the wrapped children.
  * @returns A React element that sets up the Openfort context.

@@ -1,6 +1,7 @@
 /**
- * LocalStorage helper functions to save and retrieve data on a per-app basis
- * e.g recently connected wallets, transactions, etc.
+ * LocalStorage helper functions to save and retrieve data on a per-app basis.
+ *
+ * Use these utilities to manage recent wallets, transactions, and other session-specific data.
  */
 
 //import { randomUUID as randomID } from 'crypto';

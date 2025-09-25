@@ -1,6 +1,9 @@
 /**
  * Custom wrapper around {@link wagmiUseConnect} that adds Openfort specific logic.
  *
+ * This hook forwards configuration to Wagmi while applying Openfort defaults such as initial
+ * chain selection and contextualised error logging.
+ *
  * @param props - Optional configuration passed through to Wagmi's hook.
  * @returns Connection helpers augmented with Openfort defaults and logging.
  */
